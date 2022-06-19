@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
 
 		string combinedText = roomDescription + joinedRoomInteractions;
 		AddLog(combinedText);
-
+		DisplayLog();
 	}
 
 	public void AddLog(string str) {

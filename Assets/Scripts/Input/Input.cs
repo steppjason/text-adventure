@@ -18,22 +18,22 @@ public class Input : MonoBehaviour {
 	void GetInput(string input) {
 		_gameController.AddLog(input);
 		_gameController.DisplayLog();
-		
+
 		input = input.ToLower();
 		char[] delimiter = { ' ' };
 		string[] inputWords = input.Split(delimiter);
 
-		for (int i = 0; i < _gameController.actions.Length; i++){
-			
+		for (int i = 0; i < _gameController.actions.Length; i++) {
+
 			InputAction action = _gameController.actions[i];
-			
-			if(action.keyword == inputWords[0]){
+
+			if (action.keyword == inputWords[0]) {
 				action.DoAction(_gameController, inputWords);
 			}
 
 		}
 
-			ResetInputField();
+		ResetInputField();
 	}
 
 	void ResetInputField() {
