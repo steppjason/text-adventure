@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02ae8fb8fa36e64595d6c9e3f4bdeca, type: 3}
   m_Name: StartingRoom
   m_EditorClassIdentifier: 
-  name: Starting Room
+  roomName: 
   description: Start Room....
   exits:
-  - key: 
-    description: 
-    room: {fileID: 0}
-  - key: 
-    description: 
+  - key: second room
+    description: Exit to the 2nd room
     room: {fileID: 11400000, guid: 72063815a2928944c97754c137ddee88, type: 2}

@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02ae8fb8fa36e64595d6c9e3f4bdeca, type: 3}
-  m_Name: SecondRoom
+  m_Script: {fileID: 11500000, guid: 9e2ffece51fc93744b8e8e3affa9b259, type: 3}
+  m_Name: Go
   m_EditorClassIdentifier: 
-  roomName: 
-  description: 
-  exits:
-  - key: starting room
-    description: exit to the starting room
-    room: {fileID: 11400000, guid: 768c99aa865546e41848c5b326144f7d, type: 2}
+  keyword: 
