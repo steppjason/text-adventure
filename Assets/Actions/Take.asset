@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02ae8fb8fa36e64595d6c9e3f4bdeca, type: 3}
-  m_Name: SecondRoom
+  m_Script: {fileID: 11500000, guid: 56d7ebc3209303343a182efb004b45ce, type: 3}
+  m_Name: Take
   m_EditorClassIdentifier: 
-  roomName: Second Room
-  description: This is the 2nd room
-  exits:
-  - key: south
-    description: first room south
-    room: {fileID: 11400000, guid: 768c99aa865546e41848c5b326144f7d, type: 2}
+  keyword: take

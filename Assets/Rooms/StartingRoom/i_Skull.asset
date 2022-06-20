@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc464f2b77795864fb7a0c5f04c11116, type: 3}
+  m_Name: i_Skull
+  m_EditorClassIdentifier: 
+  itemName: skull
+  description: A skull lies in the corner
+  interactions:
+  - inputAction: {fileID: 11400000, guid: be27645c99b0ce94cb3d57ebe6e76639, type: 2}
+    response: The skull is in the room./.......
+  - inputAction: {fileID: 11400000, guid: 0f1f360d3a5ea6e4e9fd906e3ae4c374, type: 2}
+    response: You take the skull

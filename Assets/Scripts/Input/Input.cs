@@ -17,7 +17,6 @@ public class Input : MonoBehaviour {
 
 	void GetInput(string input) {
 		_gameController.AddLog(input);
-		_gameController.DisplayLog();
 
 		input = input.ToLower();
 		char[] delimiter = { ' ' };
@@ -33,6 +32,7 @@ public class Input : MonoBehaviour {
 
 		}
 
+		_gameController.DisplayLog();
 		ResetInputField();
 	}
 

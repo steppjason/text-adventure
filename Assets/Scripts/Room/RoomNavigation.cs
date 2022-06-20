@@ -15,7 +15,7 @@ public class RoomNavigation : MonoBehaviour {
 
 	public void AddExitInteractions() {
 		for (int i = 0; i < currentRoom.exits.Length; i++) {
-			_gameController.roomInteractions.Add(currentRoom.exits[i].description);
+			_gameController.roomItemDescriptions.Add(currentRoom.exits[i].description);
 			exits.Add(currentRoom.exits[i].key, currentRoom.exits[i].room);
 		}
 	}

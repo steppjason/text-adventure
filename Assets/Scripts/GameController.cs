@@ -7,7 +7,8 @@ using TMPro;
 public class GameController : MonoBehaviour {
 
 	[HideInInspector] public RoomNavigation roomNavigation;
-	[HideInInspector] public List<string> roomInteractions = new List<string>();
+	[HideInInspector] public ItemController itemController;
+	[HideInInspector] public List<string> roomItemDescriptions = new List<string>();
 
 	//public Text displayText;
 	public TMP_Text displayText;
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour {
 
 	void Awake() {
 		roomNavigation = GetComponent<RoomNavigation>();
+		itemController = GetComponent<ItemController>();
 	}
 
 	void Start() {
@@ -25,15 +27,13 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void DisplayRoomText() {
-
 		ClearRoom();
-
 		GetRoom();
 
 		string roomDescription = roomNavigation.currentRoom.description + "\n";
-		string joinedRoomInteractions = string.Join("\n", roomInteractions.ToArray());
+		string joinedroomItemDescriptions = string.Join("\n", roomItemDescriptions.ToArray());
 
-		string combinedText = roomDescription + joinedRoomInteractions;
+		string combinedText = roomDescription + joinedroomItemDescriptions;
 		AddLog(combinedText);
 		DisplayLog();
 	}
@@ -49,10 +49,44 @@ public class GameController : MonoBehaviour {
 
 	void GetRoom() {
 		roomNavigation.AddExitInteractions();
+		GetItems(roomNavigation.currentRoom);
+	}
+
+	void GetItems(Room currentRoom) {
+		for (int i = 0; i < currentRoom.items.Length; i++) {
+			string itemDescription = itemController.GetItems(currentRoom, i);
+
+			if (itemDescription != null) {
+				roomItemDescriptions.Add(itemDescription);
+			}
+
+			Item item = currentRoom.items[i];
+			for (int j = 0; j < item.interactions.Length; j++) {
+				Interaction interaction = item.interactions[j];
+				
+				if (interaction.inputAction.keyword == "examine") {
+					itemController.examineDictionary.Add(item.itemName, interaction.response);
+				}
+
+				if (interaction.inputAction.keyword == "take") {
+					itemController.takeDictionary.Add(item.itemName, interaction.response);
+				}
+
+			}
+		}
+	}
+
+	public string CheckVerb(Dictionary<string, string> verbs, string verb, string itemName) {
+		if(verbs.ContainsKey(itemName)){
+			return verbs[itemName];
+		}
+
+		return "Can\'t do that.";
 	}
 
 	void ClearRoom() {
-		roomInteractions.Clear();
+		roomItemDescriptions.Clear();
 		roomNavigation.ClearExits();
+		itemController.ClearCollection();
 	}
 }

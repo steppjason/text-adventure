@@ -9,5 +9,6 @@ public class Room : ScriptableObject
 	[TextArea]
 	public string description;
 	public Exit[] exits;
+	public Item[] items;
 
 }
