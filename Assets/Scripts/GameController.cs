@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public ItemController itemController;
 	[HideInInspector] public List<string> roomItemDescriptions = new List<string>();
 
-	//public Text displayText;
 	public TMP_Text displayText;
 	public InputAction[] actions;
 
@@ -63,7 +62,7 @@ public class GameController : MonoBehaviour {
 			Item item = currentRoom.items[i];
 			for (int j = 0; j < item.interactions.Length; j++) {
 				Interaction interaction = item.interactions[j];
-				
+
 				if (interaction.inputAction.keyword == "examine") {
 					itemController.examineDictionary.Add(item.itemName, interaction.response);
 				}
