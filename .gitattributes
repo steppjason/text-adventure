@@ -1,2 +1,3 @@
 *.asset linguist-generated
 *.shader linguist-generated
+*.cginc linguist-generated
