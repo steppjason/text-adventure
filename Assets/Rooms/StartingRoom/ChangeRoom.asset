@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8159a6a2fa41264c89f084c91ad6ba8, type: 3}
   m_Name: ChangeRoom
   m_EditorClassIdentifier: 
-  requiredString: 
-  newRoom: {fileID: 0}
+  requiredString: Starting Room
+  newRoom: {fileID: 11400000, guid: 72063815a2928944c97754c137ddee88, type: 2}

@@ -17,5 +17,10 @@ MonoBehaviour:
   interactions:
   - inputAction: {fileID: 11400000, guid: be27645c99b0ce94cb3d57ebe6e76639, type: 2}
     response: The skull is in the room./.......
+    actionResponse: {fileID: 0}
   - inputAction: {fileID: 11400000, guid: 0f1f360d3a5ea6e4e9fd906e3ae4c374, type: 2}
     response: You take the skull
+    actionResponse: {fileID: 0}
+  - inputAction: {fileID: 11400000, guid: 55a8f8a88c2cc2346bac3aad4c90e8cc, type: 2}
+    response: 
+    actionResponse: {fileID: 11400000, guid: 916b634973fa3574e9b06ccb1cdb5a02, type: 2}
